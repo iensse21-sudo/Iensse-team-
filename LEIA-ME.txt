@@ -1,0 +1,37 @@
+IENSSE TEAM — APRESENTAÇÃO + APLICATIVO PWA
+
+ESTRUTURA
+- index.html: página pública de apresentação, destinada ao link da bio do Instagram.
+- app/index.html: aplicativo original, com tela de login e painel após autenticação.
+- app/manifest.webmanifest: instalação do aplicativo com abertura em /app/.
+- app/sw.js e app/service-worker.js: cache do aplicativo.
+- assets/ e icons/: imagens e ícones da marca.
+
+COMPORTAMENTO DEFINIDO
+1. O endereço principal (/) abre a apresentação pública.
+2. O botão “Acessar o aplicativo” abre /app/.
+3. O ícone instalado deve abrir /app/: sem sessão válida, mostra a tela de login; com sessão válida, abre o painel.
+4. A apresentação não é a tela inicial do aplicativo instalado.
+
+PUBLICAÇÃO NO NETLIFY
+1. Envie o conteúdo deste ZIP (extraído, mantendo a estrutura de pastas) pelo Netlify Drop.
+2. Depois da publicação, teste https://SEU-SITE.netlify.app/ e https://SEU-SITE.netlify.app/app/.
+3. Para instalar, abra /app/ no Chrome e escolha “Instalar app” ou “Adicionar à tela inicial”. Não instale a partir da página /.
+
+OBSERVAÇÕES
+- Este pacote não publica automaticamente no Netlify nem na Play Store.
+- Login, autenticação e dados online dependem de conexão com a internet e do Supabase.
+- A tela de login é exibida quando não existe sessão válida salva. Se a sessão estiver válida, o app tenta restaurá-la e abre o painel.
+
+
+CORRECAO DO ICONE INSTALADO
+A pagina principal agora declara o manifesto PWA da raiz, cujo start_url e /app/.
+Para atualizar um icone antigo: remova/desinstale o icone antigo do celular; abra https://imaginative-eclair-1a3607.netlify.app/ no Chrome; use o menu do Chrome e escolha Instalar app (nao apenas criar atalho). O icone instalado deve abrir /app/ diretamente na tela de login. O link do Instagram continua na pagina de apresentacao.
+
+
+CORREÇÃO DE ABERTURA (v3)
+- O link público / continua exibindo a apresentação no navegador comum.
+- Se / for aberto em modo standalone (ícone instalado), o próprio index.html encaminha para /app/.
+- Os manifestos usam /app/ como start_url e scope.
+- Os caches público e do aplicativo são separados; o cache do app usa ícones da pasta /icons/.
+- Publique o conteúdo deste ZIP na raiz do site Netlify (não dentro de uma subpasta).

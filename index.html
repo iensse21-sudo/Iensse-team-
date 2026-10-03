@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111">
+<script>
+/* Iensse Team: o link público continua na apresentação; o ícone instalado abre o app. */
+(function () {
+  var standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+  var iosStandalone = window.navigator && window.navigator.standalone === true;
+  if ((standalone || iosStandalone) && !/^\/app(?:\/|$)/.test(window.location.pathname)) {
+    window.location.replace('/app/');
+  }
+})();
+</script><link rel="manifest" href="/manifest.webmanifest"><meta name="description" content="Iensse Team — treinamento personalizado, consultoria e acompanhamento.">
+<title>Iensse Team | Treinamento</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#101010 url("/assets/iensse-background.png") center top / cover fixed no-repeat;color:#f4f4f4;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.wrap{position:relative;z-index:1;max-width:960px;margin:auto;padding:28px 22px 48px}.brand{font-weight:900;letter-spacing:.12em;font-size:clamp(25px,5vw,42px)}.brand-logo{display:block;width:min(100%,560px);height:auto;object-fit:contain;object-position:left center}.sub{color:#aaa;letter-spacing:.22em;font-size:11px;margin-top:6px}
+.hero{padding:clamp(65px,12vw,120px) 0 54px;max-width:720px}.eyebrow{color:#aaa;text-transform:uppercase;letter-spacing:.2em;font-size:12px}.hero h1{font-size:clamp(38px,8vw,72px);line-height:1.02;margin:18px 0}.hero p{color:#bbb;font-size:17px;line-height:1.65;max-width:590px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 22px;text-decoration:none;font-weight:700;border-radius:6px}.primary{background:#eee;color:#111}.secondary{border:1px solid #555;color:#eee}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px}.card{border:1px solid #333;border-radius:8px;padding:20px;background:#171717}.card h3{margin:0 0 9px;font-size:16px}.card p{margin:0;color:#aaa;line-height:1.5;font-size:14px}
+footer{border-top:1px solid #333;margin-top:55px;padding-top:20px;color:#888;font-size:13px}a:focus{outline:2px solid white;outline-offset:4px}
+</style></head><body><main class="wrap">
+<header><img class="brand-logo" src="/assets/iensse-logo.png" alt="Iensse Team — Hard Core Workout"></header>
+<section class="hero"><div class="eyebrow">Treinamento e acompanhamento</div>
+<h1>Treino com planejamento. Evolução com acompanhamento.</h1>
+<p>Conheça os serviços da Iensse Team e encontre uma proposta de treinamento alinhada aos teus objetivos.</p>
+<div class="actions"><a class="btn primary" href="/app/">Acessar o aplicativo</a><a class="btn secondary" href="https://www.instagram.com/lucas_iensse/" target="_blank" rel="noopener">Falar pelo Instagram</a></div></section>
+<section><div class="eyebrow">Serviços</div><div class="cards">
+<article class="card"><h3>Personal Training</h3><p>Treinamento individual ou em dupla, com orientação e acompanhamento.</p></article>
+<article class="card"><h3>Consultoria online</h3><p>Planejamento de treino e acompanhamento à distância.</p></article>
+<article class="card"><h3>Avaliação física</h3><p>Avaliação e acompanhamento da evolução física.</p></article>
+</div></section>
+<footer>© Iensse Team · Santa Maria — RS</footer></main></body></html>
